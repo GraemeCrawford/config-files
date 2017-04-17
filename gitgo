@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DIR=$(pwd)
+
+cd $DIR && git add .
+cd $DIR && git commit -m $1
+cd $DIR && git pull
+cd $DIR && git push
+exit $?
