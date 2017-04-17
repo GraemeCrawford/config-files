@@ -1,6 +1,15 @@
 #!/bin/bash
 
 DIR=$(pwd)
+REPOCHECK=$(cd $DIR && git status|grep fatal)
+
+if echo $REPOCHECK|grep fatal ; then
+  echo "Not a git repo"
+    exit
+  else
+    echo "Git repo detected"
+fi
+
 read -e -p "Enter a git commit message: " MESSAGE
 
 cd $DIR && git add .
