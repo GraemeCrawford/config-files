@@ -4,6 +4,6 @@ DIR=$(pwd)
 MESSAGE=$(read -e -p "Enter a git commit message: ")
 
 cd $DIR && git add .
-cd $DIR && git commit -m $MESSAGE
+cd $DIR && git commit -m "$MESSAGE"
 cd $DIR && git push
 exit $?
