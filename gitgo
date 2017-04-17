@@ -3,7 +3,6 @@
 DIR=$(pwd)
 read -e -p "Enter a git commit message: " MESSAGE
 
-echo $DIR
 cd $DIR && git add .
 echo "$MESSAGE"
 cd $DIR && git commit -m "$MESSAGE"
