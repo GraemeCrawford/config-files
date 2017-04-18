@@ -1,21 +1,10 @@
 #!/bin/bash
 
 DIR=$(pwd)
-REPOCHECK=$(cd $DIR && git status)
-
-if [[ $string == *"fatal"* ]] ; then
-  echo "Not a git repo"
-    exit 0
-exit
-  else
-    echo "Git repo detected"
-fi
-
 read -e -p "Enter a git commit message: " MESSAGE
 
 cd $DIR && git add .
 echo "$MESSAGE"
 cd $DIR && git commit -m "$MESSAGE"
-cd $DIR && git status
 cd $DIR && git push
 exit $?
