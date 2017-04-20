@@ -1,7 +1,7 @@
 #!groovy
 stage('Test') {
     node('master') {
-      sh "ls /home "
+      sh "ls /"
       node('master') {
         sh "pwd"
       }
