@@ -1,9 +1,9 @@
 #!groovy
 stage('Test') {
     node('master') {
-      sh "ls /"
+      sh "docker build -t alpine-mysql:0.1 . /"
       node('master') {
-        sh "pwd"
+        sh "docker images|grep alpine"
       }
     }
 }
